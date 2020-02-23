@@ -1,6 +1,10 @@
 // Font
 @import url('https://fonts.googleapis.com/css?family=Lato:400|Open+Sans:400,700');
 
+// Menu colors
+$menu-primary: {{ or .Site.Params.colors.menu_primary "#1c3ed3" }};
+$menu-secondary: {{ or .Site.Params.colors.menu_secondary "#ffffff" }};
+
 // Bootstrap
 @import 'bootstrap/functions';
 @import 'bootstrap-variables';
