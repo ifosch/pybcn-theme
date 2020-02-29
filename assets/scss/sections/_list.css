@@ -1,0 +1,9 @@
+.section-list {
+    .hero-image {
+        background-color: $menu-primary;
+    }
+
+    .hero-text {
+        color: $menu-secondary;
+    }
+}
