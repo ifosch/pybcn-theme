@@ -4,6 +4,7 @@
 // Menu colors
 $menu-primary: {{ or .Site.Params.colors.menu_primary "#1c3ed3" }};
 $menu-secondary: {{ or .Site.Params.colors.menu_secondary "#ffffff" }};
+$footer-background: {{ or .Site.Params.colors.footer_background "#43454d" }};
 
 // Bootstrap
 @import 'bootstrap/functions';
