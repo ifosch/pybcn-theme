@@ -69,6 +69,7 @@ $footer-background: {{ or .Site.Params.colors.footer_background "#43454d" }};
 
 // Pages
 @import 'sections/list';
+@import 'pages/news/summary';
 @import 'pages/services/page-services-single';
 @import 'pages/services/service-summary';
 @import 'pages/work/work-summary';
