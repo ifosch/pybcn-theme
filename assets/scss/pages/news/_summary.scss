@@ -1,7 +1,31 @@
 .news-entry {
-    .publish-date {
-        font-size: x-small;
-        color: gray;
+    .news-entry-title {
+        font-size: medium;
+        font-weight: 700;
     }
-    border-bottom: 1px solid black;
+    a {
+        color: rgb(41,47,51);
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    p, ul li {
+        font-size: large;
+    }
+    .publish-date {
+        width: 100%;
+        text-align: right;
+        font-size: small;
+        color: rgb(126,143,156);
+    }
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid rgb(230,230,230);
+    font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
+    color: rgb(41,47,51);
+}
+
+.news-entry:hover {
+    background-color: rgb(240,250,255);
 }

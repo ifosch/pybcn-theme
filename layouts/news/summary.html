@@ -1,3 +1,5 @@
-<span class="publish-date">{{ .PublishDate.Format "January 2, 2006, 15:04:05" }}</span>
-<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-{{ .Content | truncate 180 "..." }}
+<a href="{{ .Permalink }}">
+  <div class="news-entry-title">{{ .Title }}</div>
+  <p>{{ or .Params.excerpt (htmlUnescape (.Content | truncate 180 " ..." | plainify)) }}</p>
+  <div class="publish-date">{{ .PublishDate.Format "Jan 2, 2006" }}</div>
+</a>

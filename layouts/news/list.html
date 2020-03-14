@@ -6,27 +6,38 @@
 
 {{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
 {{ if .Content }}
-<div class="container pt-6 pt-md-10">
-  <div class="row">
-    <div class="col-12">
-      <div class="page-intro">
-        Read this {{ .Content }}
-      </div>
+<div class="container pt-6 pt-md-12">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-intro">
+                Read this {{ .Content }}
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 {{ end }}
 
-
-<div class="container pb-6 pt-6 pb-md-10 pt-md-10">
-  <div class="row">
-      <ul class="col-12">
-          {{ range .Pages }}
-          <li class="news-entry">
-              {{ .Render "summary" }}
-          </li>
-          {{ end }}
-      </ul>
-  </div>
+{{ $columnWidth := 12 }}
+{{ if .Params.twitterLists }}
+{{ $columnWidth = div 12 (add (len .Params.twitterLists) 1) }}
+{{ end }}
+<div class="container pb-6 pt-6 pb-md-12 pt-md-12">
+    <div class="row">
+        <div class="col-md-{{ $columnWidth }}">
+            <div class="news-title">
+                <h1>
+                    News from our blog
+                </h1>
+            </div>
+            <ul>
+                {{ range .Pages }}
+                <li class="news-entry">
+                    {{ .Render "summary" }}
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ partial "twitter-timeline.html" (dict "list" .Params.twitterLists "height" 1250 "width" $columnWidth)}}
+    </div>
 </div>
 {{ end }}
